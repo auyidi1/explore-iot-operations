@@ -179,6 +179,17 @@ spec:
   ports:
   - port: 1883
     protocol: Mqtt
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-listener
+  namespace: azure-iot-operations
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 1883
+    targetPort: 1883
 ```
 
 > IMPORTANT: This configuration is for testing purposes only. In a production environment, use a secure connection.
